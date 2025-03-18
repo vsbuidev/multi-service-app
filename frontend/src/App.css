@@ -1,0 +1,130 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+button {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: green;
+}
+
+button:hover {
+  background-color: green;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+li button {
+  background-color: red;
+  padding: 8px 15px;
+  margin: 4px;
+}
+
+li button:hover {
+  background-color: red;
+}
+
+.edit {
+  background-color: yellow;
+}
+
+.edit:hover {
+  background-color: yellow;
+}
+
+/* Mobile devices (up to 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  li {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* Tablet devices (768px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  input {
+    width: 80%;
+    margin: 8px auto;
+    display: block;
+  }
+
+  button {
+    width: 80%;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+/* Desktop devices (above 1024px) */
+@media screen and (min-width: 1025px) {
+  .container {
+    padding: 30px;
+  }
+
+  input {
+    width: 60%;
+    margin: 8px auto;
+    display: block;
+  }
+
+  button {
+    width: 60%;
+    display: block;
+    margin: 10px auto;
+  }
+}

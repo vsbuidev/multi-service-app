@@ -1,0 +1,46 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    environment:
+      - MONGO_URI=mongodb://admin:password@database:27017/mydatabase?authSource=admin
+      - REDIS_URL=redis://cache:6379
+    ports:
+      - "5000:5000"
+    depends_on:
+      - database
+      - cache
+
+  database:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    command: ["--bind_ip_all"]
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  cache:
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+
+  proxy:
+    build: ./proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+
+volumes:
+  mongo-data:
+  redis-data:
