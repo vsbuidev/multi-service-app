@@ -40,10 +40,11 @@ function App() {
 
   return (
     <div className="container">
-      <h2>
-        Multiple Service Application using CRUD Operations Deployed in Docker
-      </h2>
-      <h2>Type : Microservices Architecture</h2>
+      <h2>Multiple Service Application</h2>
+      <h4>
+        It is a multi-service monolithic architectured application running on
+        Docker
+      </h4>
       <input
         placeholder="Name"
         value={name}
@@ -63,11 +64,15 @@ function App() {
       <ul>
         {users.map((user) => (
           <li key={user._id}>
-            {user.name} ({user.email})
-            <button className="edit" onClick={() => editUser(user)}>
-              Edit
-            </button>
-            <button onClick={() => deleteUser(user._id)}>Delete</button>
+            <div className="user-info">
+              {user.name} ({user.email})
+            </div>
+            <div className="button-group">
+              <button className="edit" onClick={() => editUser(user)}>
+                Edit
+              </button>
+              <button onClick={() => deleteUser(user._id)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>

@@ -4,7 +4,8 @@
   margin: 0 auto;
 }
 
-h2 {
+h2,
+h4 {
   text-align: center;
   margin-bottom: 30px;
 }
@@ -45,15 +46,30 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 16px;
   margin: 8px 0;
   border-radius: 4px;
+  background-color: #1a1a1a;
+  word-break: break-all;
+}
+
+.users-info {
+  flex: 1;
+  margin-right: 15px;
+  overflow-wrap: break-word;
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
 }
 
 li button {
   background-color: red;
-  padding: 8px 15px;
-  margin: 4px;
+  padding: 8px 16px;
+  margin: 8px;
+  min-width: 120px;
 }
 
 li button:hover {
@@ -62,6 +78,7 @@ li button:hover {
 
 .edit {
   background-color: yellow;
+  color: #1a1a1a;
 }
 
 .edit:hover {
@@ -86,8 +103,17 @@ li button:hover {
 
   li {
     flex-direction: column;
-    text-align: center;
-    gap: 10px;
+    text-align: left;
+    gap: 15px;
+  }
+
+  .button-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .button-group button {
+    flex: 1;
   }
 }
 
